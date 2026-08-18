@@ -1,0 +1,58 @@
+```cisco
+! ===================================================
+! SCRIPT DE CONFIGURACIÓN Y HARDENING - ROUTER R1
+! Dispositivo: Cisco Router (IOS)
+! ===================================================
+
+enable
+configure terminal
+
+! 1. Configuración Básica
+hostname R1
+no ip domain-lookup
+banner motd #Acceso no autorizado prohibido!#
+
+! 2. Políticas Globales de Seguridad
+service password-encryption
+security passwords min-length 12
+enable secret $cisco!PRIV*
+
+! 3. Usuario Local y Parámetros SSH
+username sshAdmin secret 55HAdm!n2020
+ip domain-name ccna-lab.com
+crypto key generate rsa modulus 1024
+
+! 4. Protección contra Ataques de Fuerza Bruta
+login block-for 120 attempts 3 within 60
+
+! 5. Configuración de Interfaces
+interface GigabitEthernet0/0/1
+ description Conectado a Switch S1
+ ip address 192.168.1.1 255.255.255.0
+ no shutdown
+ exit
+
+interface GigabitEthernet0/0/0
+ description Interface no utilizada
+ shutdown
+ exit
+
+! 6. Asegurar Línea de Consola
+line console 0
+ password $cisco!!CON*
+ exec-timeout 5 0
+ login
+ exit
+
+! 7. Asegurar Líneas VTY (Solo SSH)
+line vty 0 4
+ password $cisco!!VTY*
+ exec-timeout 5 0
+ transport input ssh
+ login local
+ exit
+
+end
+
+! 8. Guardar en NVRAM
+copy running-config startup-config

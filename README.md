@@ -1,6 +1,6 @@
 # 🌐 Portafolio de Prácticas y Laboratorios de Redes
 
-¡Bienvenido/a a mi portafolio de redes de computadoras! 🚀
+¡Bienvenido a mi portafolio de redes de computadoras! 🚀
 
 Este repositorio centraliza mis laboratorios prácticos, ejercicios de configuración y escenarios de simulación sobre **telecomunicaciones, arquitectura de redes, enrutamiento, conmutación y seguridad (hardening)**.
 

@@ -37,7 +37,8 @@ Este laboratorio se enfoca en el fortalecimiento de seguridad (**hardening**) pa
 
 ## 📂 Archivos del Repositorio
 
-* `topologia.pkt` — Archivo ejecutable del laboratorio en Cisco Packet Tracer.
+* `Dispositivos de red seguros.pkt` — Archivo ejecutable del laboratorio en Cisco Packet Tracer.
+* `topologia.pkt` — Archivo png de la topoligía utilizada en el laboratorio.
 * `R1-config.txt` — Script completo con los comandos de configuración aplicados en R1.
 * `S1-config.txt` — Script completo con los comandos de configuración aplicados en S1.
 

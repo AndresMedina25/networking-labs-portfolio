@@ -26,7 +26,7 @@ Este repositorio centraliza mis laboratorios prácticos, ejercicios de configura
 
 | Módulo | Laboratorio | Descripción | Enlace |
 | :--- | :--- | :--- | :---: |
-| **01. Seguridad & Hardening** | Dispositivos de Red Seguros | Configuración inicial de SSH, políticas de contraseñas y apagado de puertos. | [Ver Lab](./02-seguridad-y-hardening/lab-01-dispositivos-de-red-seguros/) |
+| **01. Seguridad & Hardening** | Dispositivos de Red Seguros | Configuración inicial de SSH, políticas de contraseñas y apagado de puertos. | *Próximamente* |
 | **01. Seguridad & Hardening** | Port Security & ACLs | Protecciones L2 contra MAC flooding e implementación de filtros. | *Próximamente* |
 | **02. Switching** | VLANs y Trunking (802.1Q) | Segmentación de red y configuración de enlaces troncales. | *Próximamente* |
 | **03. Routing** | OSPF Single-Area | Enrutamiento dinámico básico y métricas de costo. | *Próximamente* |

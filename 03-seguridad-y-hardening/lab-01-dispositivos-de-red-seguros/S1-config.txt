@@ -1,0 +1,59 @@
+! ===================================================
+! SCRIPT DE CONFIGURACIÓN Y HARDENING - SWITCH S1
+! Dispositivo: Cisco Switch (IOS)
+! ===================================================
+
+enable
+configure terminal
+
+! 1. Configuración Básica
+hostname S1
+no ip domain-lookup
+banner motd #Acceso no autorizado prohibido!#
+
+! 2. Políticas Globales de Seguridad
+service password-encryption
+security passwords min-length 12
+enable secret $cisco!PRIV*
+
+! 3. Usuario Local y Parámetros SSH
+username sshAdmin secret 55HAdm!n2020
+ip domain-name ccna-lab.com
+crypto key generate rsa modulus 1024
+
+! 4. Protección contra Ataques de Fuerza Bruta
+login block-for 120 attempts 3 within 60
+
+! 5. Configuración SVI de Administración y Gateway
+interface Vlan1
+ description Interfaz SVI de Administracion
+ ip address 192.168.1.11 255.255.255.0
+ no shutdown
+ exit
+
+ip default-gateway 192.168.1.1
+
+! 6. Deshabilitar Puertos Inactivos (Hardening L2)
+interface range FastEthernet0/2-4, FastEthernet0/6-24, GigabitEthernet0/1-2
+ shutdown
+ exit
+
+! 7. Asegurar Línea de Consola
+line console 0
+ password $cisco!!CON*
+ exec-timeout 5 0
+ login
+ exit
+
+! 8. Asegurar Líneas VTY (Solo SSH)
+line vty 0 15
+ password $cisco!!VTY*
+ exec-timeout 5 0
+ transport input ssh
+ login local
+ exit
+
+end
+
+! 9. Guardar en NVRAM
+copy running-config startup-config

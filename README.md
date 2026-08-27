@@ -32,5 +32,12 @@ Este repositorio centraliza mis laboratorios prácticos, ejercicios de configura
 | **03. Routing** | OSPF Single-Area | Enrutamiento dinámico básico y métricas de costo. | *Próximamente* |
 
 ---
+## 📐 Topología de Red
+
+Debido a la extensión de la red, puedes inspeccionar y ejecutar la topología interactiva completa descargando directamente el proyecto simulado:
+
+📂 **[Descargar archivo .pkt del laboratorio](./ruta/a/tu/archivo-de-laboratorio.pkt)**
+
+> ℹ️ **Nota de compatibilidad:** Requiere **Cisco Packet Tracer v8.0** o superior.
 
 > 💻 *Repositorio mantenido de forma activa conforme avanzo en mis prácticas y certificaciones de red.*

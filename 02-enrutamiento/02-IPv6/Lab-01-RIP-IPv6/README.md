@@ -76,7 +76,7 @@ ping C01A:E1:CAFE::52:2
 
 Debido a la extensión de la red, puedes inspeccionar y ejecutar la topología interactiva completa descargando directamente el proyecto simulado:
 
-📂 **[Descargar archivo .pkt del laboratorio](./PROTOCOLO_RIP_IPV.6.pkt)**
+📂 **[Descargar archivo .pkt del laboratorio](./ruta/a/tu/archivo-de-laboratorio.pkt)**
 
 > ℹ️ **Nota de compatibilidad:** Requiere **Cisco Packet Tracer v8.0** o superior.
 

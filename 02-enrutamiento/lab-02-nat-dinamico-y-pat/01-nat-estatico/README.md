@@ -5,7 +5,7 @@ Implementar y verificar la configuración de NAT Estático en un router Cisco, p
 
 ## Topología de la Red
 
-![Topología de Red NAT Estático](./topologia.png)
+![Topología de Red NAT Estático](./Topología.png)
 
 La red está compuesta por tres enrutadores principales: **SUCURSAL 1**, **MATRIZ** y **SUCURSAL 2**. 
 *   El router **MATRIZ** actúa como núcleo, conectándose a **SUCURSAL 1** a través de la red `195.10.100.0/28` y a **SUCURSAL 2** mediante la red `195.10.100.16/28`.

@@ -47,6 +47,7 @@ Switch(config-vlan)# exit
 Switch(config)# interface fastEthernet 0/1
 Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 10
+```
 
 ### 2. Configuración de VLAN de Voz
 ```bash
@@ -58,3 +59,33 @@ Switch(config)# interface fastEthernet 0/2
 Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 10      # VLAN para la PC
 Switch(config-if)# switchport voice vlan 20       # VLAN para el Teléfono IP
+```
+### 3. Configuración de VLAN de Administración (SVI)
+```bash
+Switch(config)# vlan 99
+Switch(config-vlan)# name ADMIN
+Switch(config-vlan)# exit
+
+Switch(config)# interface vlan 99
+Switch(config-if)# ip address 192.168.99.2 255.255.255.0
+Switch(config-if)# no shutdown
+Switch(config-if)# exit
+Switch(config)# ip default-gateway 192.168.99.1   # Para alcance fuera de la red local
+```
+### 4. Configuración de Enlaces Troncales y VLAN Nativa
+```bash
+Switch(config)# interface gigabitEthernet 0/1
+Switch(config-if)# switchport mode trunk
+
+# Cambiar la VLAN Nativa (Buena práctica de seguridad)
+Switch(config-if)# switchport trunk native vlan 999
+
+# Restringir las VLANs permitidas (Buena práctica de seguridad)
+Switch(config-if)# switchport trunk allowed vlan 10,20,99,999
+```
+### 5. Comandos de Verificación
+```bash
+Switch# show vlan brief             # Muestra las VLANs creadas y sus puertos asignados
+Switch# show interfaces trunk       # Muestra los puertos troncales y la VLAN nativa
+Switch# show interfaces fa0/1 switchport # Muestra el estado detallado de capa 2 del puerto
+```

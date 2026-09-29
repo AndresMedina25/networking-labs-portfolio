@@ -47,3 +47,14 @@ Switch(config-vlan)# exit
 Switch(config)# interface fastEthernet 0/1
 Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 10
+
+### 2. Configuración de VLAN de Voz
+```bash
+Switch(config)# vlan 20
+Switch(config-vlan)# name VOIP
+Switch(config-vlan)# exit
+
+Switch(config)# interface fastEthernet 0/2
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10      # VLAN para la PC
+Switch(config-if)# switchport voice vlan 20       # VLAN para el Teléfono IP

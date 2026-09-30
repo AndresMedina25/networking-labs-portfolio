@@ -49,7 +49,8 @@ Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 10
 ```
 
-### 2. Configuración de VLAN de Voz
+### 2. Configuración de VLAN de Voz y QoS (Calidad de Servicio)
+*Nota: Generalmente el puerto se configura para pertenecer a una VLAN de datos y a una VLAN de voz simultáneamente.*
 ```bash
 Switch(config)# vlan 20
 Switch(config-vlan)# name VOIP
@@ -59,6 +60,7 @@ Switch(config)# interface fastEthernet 0/2
 Switch(config-if)# switchport mode access
 Switch(config-if)# switchport access vlan 10      # VLAN para la PC
 Switch(config-if)# switchport voice vlan 20       # VLAN para el Teléfono IP
+Switch(config-if)# mls qos trust cos              # Priorizar tráfico de voz
 ```
 ### 3. Configuración de VLAN de Administración (SVI)
 ```bash

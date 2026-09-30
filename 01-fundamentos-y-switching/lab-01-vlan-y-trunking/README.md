@@ -96,6 +96,11 @@ Switch# show interfaces fa0/1 switchport # Muestra el estado detallado de capa 2
 
 En esta práctica se simula una red corporativa distribuida, implementando segmentación lógica mediante VLANs para diferentes departamentos, configuración de enlaces troncales entre switches, y la integración de VLANs de voz para teléfonos IP.
 
+## Topología de Red
+
+A continuación se muestra el diseño lógico de la red implementada:
+
+![Topología de la red](Topología%20VLAN.png)
 
 ### Direccionamiento y Segmentación
 La red está segmentada en las siguientes VLANs con sus respectivas subredes:

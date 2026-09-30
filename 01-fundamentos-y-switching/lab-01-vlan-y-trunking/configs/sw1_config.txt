@@ -1,1 +1,38 @@
+enable
+configure terminal
+hostname SW1
 
+! Creacion de VLANs
+vlan 10
+name Facultad
+vlan 20
+name Estudiantes
+vlan 30
+name Invitados
+vlan 150
+name Voz
+exit
+
+! Configuracion de Enlace Troncal
+interface FastEthernet0/1
+switchport mode trunk
+exit
+
+! Configuracion de Puertos de Acceso
+interface FastEthernet0/6
+switchport mode access
+switchport access vlan 30
+exit
+
+interface FastEthernet0/11
+switchport mode access
+switchport access vlan 10
+exit
+
+! Configuracion de Puerto Mixto (Datos y Voz)
+interface FastEthernet0/18
+switchport mode access
+switchport access vlan 20
+switchport voice vlan 150
+mls qos trust cos
+exit

@@ -1,1 +1,19 @@
+enable
+configure terminal
+! Se sugiere agregar 'hostname SW2' para mantener el estandar de nombres
 
+! Configuracion de Enlaces Troncales multiples
+interface range FastEthernet0/1, FastEthernet0/3
+switchport mode trunk
+exit
+
+! Creacion de VLANs
+vlan 10 
+name Facultad
+vlan 20
+name Estudiantes
+vlan 30
+name invitados
+vlan 150
+name Voz
+exit
